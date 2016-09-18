@@ -40,8 +40,8 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                'catalogue' => 'site/index',
                 'catalogue/<category_id:\d+>' => 'site/index',
+                'catalogue' => 'site/index',
             ],
         ],
     ],
