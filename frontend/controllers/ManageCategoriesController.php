@@ -68,6 +68,7 @@ class ManageCategoriesController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
+            $model->parent_id = 1;
             return $this->render('create', [
                 'model' => $model,
             ]);
