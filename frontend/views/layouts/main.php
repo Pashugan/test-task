@@ -28,18 +28,18 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => 'My Company',
+        'brandLabel' => "О'КЕЙ Доставка",
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ]);
     $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
+        ['label' => 'Каталог товаров', 'url' => ['/site/index']],
     ];
     if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => 'Manage categories', 'url' => ['/manage-categories']];
-        $menuItems[] = ['label' => 'Manage items', 'url' => ['/manage-items']];
+        $menuItems[] = ['label' => 'Редактировать категории', 'url' => ['/manage-categories']];
+        $menuItems[] = ['label' => 'Редактировать товары', 'url' => ['/manage-items']];
     }
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
@@ -59,7 +59,7 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
+        <p class="pull-left">&copy; О'КЕЙ Доставка <?= date('Y') ?></p>
 
         <p class="pull-right"><?= Yii::powered() ?></p>
     </div>

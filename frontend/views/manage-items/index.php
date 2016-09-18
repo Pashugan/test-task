@@ -7,30 +7,30 @@ use yii\widgets\Pjax;
 /* @var $searchModel common\models\ItemSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Items';
+$this->title = 'Товары';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="item-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Item', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Создать товар', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 <?php Pjax::begin(); ?>    <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
             'id',
             [
                 'attribute' => 'category_id',
-                'label' => 'Category',
+                'label' => 'Категория товара',
                 'value' => 'category.title',
             ],
-            'title',
+            [
+                'attribute' => 'title',
+                'label' => 'Название',
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
